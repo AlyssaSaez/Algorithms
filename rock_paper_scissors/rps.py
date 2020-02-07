@@ -3,7 +3,22 @@
 import sys
 
 def rock_paper_scissors(n):
-  pass 
+  output = []
+  possible_moves = ['scissors', 'paper', 'rock']
+
+  stack = []
+  stack.append([])
+
+  while len(stack) > 0:
+    hand = stack.pop()
+
+    if n == 0 or len(hand) == n:
+      output.append(hand)
+    else:
+      for play in possible_moves:
+        stack.append(hand + [play])
+
+  return output
 
 
 if __name__ == "__main__":
