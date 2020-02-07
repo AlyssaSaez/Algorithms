@@ -3,7 +3,12 @@
 import sys
 
 def making_change(amount, denominations):
-  pass 
+    test = [1] + [0] * (amount)
+
+    for index in denominations:
+      for place in range(index, amount + 1):
+        test[place] = test[place] + test[place - index]
+    return test[amount] 
 
 
 if __name__ == "__main__":
